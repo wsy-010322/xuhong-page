@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify && node ./scripts/build-dist.mjs"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
