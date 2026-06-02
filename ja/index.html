@@ -428,7 +428,7 @@
                 <form id="contactForm" action="https://formspree.io/f/mbdbvzle" method="POST" enctype="multipart/form-data" class="space-y-6">
                         <input type="hidden" name="_subject" value="New Inquiry from Xuhong Bags Website">
                         <input type="hidden" name="_replyto" id="formReplyTo">
-                        <input type="hidden" name="_next" value="https://xuhongbags.com/thank-you/">
+                        <input type="hidden" name="_next" value="https://xuhongbags.com/ja/thank-you/">
                     <div class="grid md:grid-cols-2 gap-4">
                         <input type="text" id="contactName" name="name" class="w-full bg-transparent border-0 border-b border-gray-200 py-3 text-brand-primary placeholder:text-gray-300 focus:outline-none focus:border-b-brand-accent transition-colors text-sm" placeholder="お名前 *" required>
                         <input type="text" id="contactCompany" name="company" class="w-full bg-transparent border-0 border-b border-gray-200 py-3 text-brand-primary placeholder:text-gray-300 focus:outline-none focus:border-b-brand-accent transition-colors text-sm" placeholder="会社名 / ブランド名">
@@ -645,7 +645,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     fetch('https://formspree.io/f/mbdbvzle', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
     .then(function(r) {
         if (r.ok) {
-            window.location.href = '/thank-you/';
+            window.location.href = '/ja/thank-you/';
         } else {
             r.json().then(function(data) {
                 console.error('Formspree error:', data);
