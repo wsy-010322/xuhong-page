@@ -337,7 +337,7 @@
                         <label class="flex items-center justify-center w-full h-16 border-2 border-dashed border-brand-primary/10 rounded-xl cursor-pointer bg-brand-light/50 hover:border-brand-accent/30 transition-colors gap-3 px-4">
                             <i class="fa-solid fa-cloud-arrow-up text-brand-primary/30"></i>
                             <span class="text-xs text-brand-textMuted"><span class="font-semibold text-brand-primary">Click to upload</span> <span>or drag and drop</span></span>
-                            <span class="text-xs text-gray-400 hidden sm:inline">JPG, PNG, PDF (MAX. 10MB)</span>
+                            <span class="text-xs text-gray-400 hidden sm:inline">Up to 10 files, 25MB each</span>
                             <input id="fileInput2" type="file" name="attachment" accept="image/*,.pdf" class="hidden" multiple />
                         </label>
                         <div id="fileList2" class="mt-2 space-y-1 text-xs text-brand-primary"></div>
@@ -431,7 +431,58 @@ dz.addEventListener('dragover',e=>{ e.preventDefault(); dz.classList.add('border
 dz.addEventListener('dragleave',()=>dz.classList.remove('border-brand-accent/40'));
 dz.addEventListener('drop',e=>{ e.preventDefault(); dz.classList.remove('border-brand-accent/40'); handleFiles(e.dataTransfer.files); });
 fi.addEventListener('change',()=>handleFiles(fi.files));
-function handleFiles(files) { if(!files.length)return; fl.innerHTML=''; var dt=new DataTransfer(); Array.from(files).forEach(f=>{ dt.items.add(f); var d=document.createElement('div'); d.className='flex items-center gap-2 text-sm text-brand-primary font-medium'; d.innerHTML='<i class="fa-solid fa-file-image text-brand-primary"></i> '+f.name+' <span class="text-xs text-brand-textMuted">('+(f.size/1024).toFixed(1)+' KB)</span>'; fl.appendChild(d); }); fi.files=dt.files; }
+const MAX_FILES = 10;
+const MAX_FILE_SIZE = 25 * 1024 * 1024;
+const MAX_TOTAL_SIZE = 100 * 1024 * 1024;
+let selectedFiles = new DataTransfer();
+function uploadLimitMessage(type, fileName) {
+    switch(currentLang) {
+        case 'zh': return type === 'count' ? '最多可上传10个附件。' : type === 'single' ? '单个附件不能超过25MB：' + fileName : '所有附件总大小不能超过100MB。';
+        case 'ja': return type === 'count' ? '添付ファイルは最大10個までです。' : type === 'single' ? '1ファイルは25MB以下にしてください：' + fileName : '添付ファイルの合計サイズは100MB以下にしてください。';
+        case 'ko': return type === 'count' ? '첨부파일은 최대 10개까지 업로드할 수 있습니다.' : type === 'single' ? '파일 1개는 25MB 이하여야 합니다: ' + fileName : '전체 첨부파일 용량은 100MB 이하여야 합니다.';
+        default: return type === 'count' ? 'You can upload up to 10 attachments.' : type === 'single' ? 'Each attachment must be 25MB or smaller: ' + fileName : 'Total attachment size must be 100MB or smaller.';
+    }
+}
+function renderFiles() {
+    fl.innerHTML = '';
+    Array.from(selectedFiles.files).forEach((f, index) => {
+        const d = document.createElement('div');
+        d.className = 'flex items-center justify-between gap-2 text-sm text-brand-primary font-medium';
+        const meta = document.createElement('span');
+        meta.className = 'min-w-0 truncate';
+        meta.textContent = f.name + ' (' + (f.size / 1024).toFixed(1) + ' KB)';
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'text-xs text-brand-textMuted hover:text-brand-accent flex-shrink-0';
+        remove.textContent = currentLang === 'zh' ? '移除' : currentLang === 'ja' ? '削除' : currentLang === 'ko' ? '삭제' : 'Remove';
+        remove.onclick = () => removeFile(index);
+        d.appendChild(meta);
+        d.appendChild(remove);
+        fl.appendChild(d);
+    });
+    fi.files = selectedFiles.files;
+}
+function removeFile(index) {
+    const next = new DataTransfer();
+    Array.from(selectedFiles.files).forEach((file, i) => { if (i !== index) next.items.add(file); });
+    selectedFiles = next;
+    renderFiles();
+}
+function handleFiles(files) {
+    if (!files.length) return;
+    const next = new DataTransfer();
+    Array.from(selectedFiles.files).forEach(file => next.items.add(file));
+    let totalSize = Array.from(next.files).reduce((sum, file) => sum + file.size, 0);
+    for (const file of Array.from(files)) {
+        if (next.files.length >= MAX_FILES) { alert(uploadLimitMessage('count')); break; }
+        if (file.size > MAX_FILE_SIZE) { alert(uploadLimitMessage('single', file.name)); continue; }
+        if (totalSize + file.size > MAX_TOTAL_SIZE) { alert(uploadLimitMessage('total')); break; }
+        next.items.add(file);
+        totalSize += file.size;
+    }
+    selectedFiles = next;
+    renderFiles();
+}
 
 // Submit - native fetch, no CDN dependency
 function submitContactForm() {} // legacy placeholder
@@ -476,7 +527,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             document.getElementById('successBody').textContent = body;
             // reset form
             document.getElementById('contactForm').reset();
-            var fl2 = document.getElementById('fileList2'); if (fl2) fl2.innerHTML = '';
+            var fl2 = document.getElementById('fileList2'); if (fl2) fl2.innerHTML = ''; selectedFiles = new DataTransfer(); fi.files = selectedFiles.files;
         } else {
             alert('Submit failed. Please try again or email us directly.');
         }
