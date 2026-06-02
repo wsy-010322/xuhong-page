@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Drawstring Bags Manufacturer | Xuhong Bags</title>
     <meta name="description" content="Custom drawstring bags factory. Cotton, polyester, nylon & non-woven options. Double drawcord, custom print logo. MOQ 5000 pcs, free sampling. Fast 15-day turnaround from Jinhua, China.">
-    <meta name="keywords" content="custom bag manufacturing, OEM bag factory, canvas bags wholesale, drawstring bags, polyester bags, school backpacks, brand bag OEM, bag manufacturer China, tote bag factory, custom tote bags">
     <meta name="author" content="Xuhong Bags">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://xuhongbags.com/en/custom-drawstring-bags/">
@@ -15,10 +14,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xuhongbags.com/en/custom-drawstring-bags/">
     <meta property="og:site_name" content="Xuhong Bags">
+    <meta property="og:image" content="https://xuhongbags.com/%E5%B8%86%E5%B8%83%E5%8C%85-%E7%AD%9B%E9%80%89/new1.jpg">
+    <meta property="og:image:alt" content="Custom bag samples by Xuhong Bags">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Custom Drawstring Bags Manufacturer | Xuhong Bags">
     <meta name="twitter:description" content="Custom drawstring bags factory. Cotton, polyester, nylon & non-woven options. Double drawcord, custom print logo. MOQ 5000 pcs, free sampling. Fast 15-day turnaround from Jinhua, China.">
+    <meta name="twitter:image" content="https://xuhongbags.com/%E5%B8%86%E5%B8%83%E5%8C%85-%E7%AD%9B%E9%80%89/new1.jpg">
     <!-- Structured Data -->
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,16 +53,13 @@
 
 
     <link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/custom-drawstring-bags/">
-    <link rel="alternate" hreflang="zh" href="https://xuhongbags.com/zh/custom-drawstring-bags/">
-    <link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/custom-drawstring-bags/">
-    <link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/custom-drawstring-bags/">
     <link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/custom-drawstring-bags/">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Custom Drawstring Bags",
-        "description": "Custom custom drawstring bags manufactured by Xuhong Bags — premium B2B bag factory in Jinhua, China. MOQ 5000 pcs, free sampling.",
+        "description": "Custom drawstring bags manufactured by Xuhong Bags — premium B2B bag factory in Jinhua, China. MOQ 5000 pcs, free sampling.",
         "brand": {
             "@type": "Brand",
             "name": "Xuhong Bags"
@@ -389,7 +388,7 @@
         <div class="w-10 h-10 border border-brand-primary/20 rounded-full flex items-center justify-center text-brand-primary text-lg mx-auto mb-3"><i class="fa-brands fa-weixin"></i></div>
         <h3 class="font-display font-bold text-lg text-brand-primary mb-1">Scan to Add</h3>
         <p class="text-sm text-brand-textMuted mb-5">Scan the QR code with WeChat</p>
-        <img src="../../企业微信.jpg" alt="WeChat QR" class="w-52 h-52 object-contain mx-auto rounded-2xl border border-brand-border">
+        <img loading="lazy" decoding="async" src="../../企业微信.jpg" alt="WeChat QR" class="w-52 h-52 object-contain mx-auto rounded-2xl border border-brand-border">
         <button onclick="closeWeChatQR()" class="mt-5 bg-brand-primary hover:bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all">Close</button>
     </div>
 </div>
@@ -429,7 +428,7 @@ document.querySelectorAll('.carousel[data-images]').forEach(el => {
     const track = el.querySelector('.carousel-track');
     const dotsC = el.querySelector('.absolute.bottom-3');
     let idx = 0, iv;
-    images.forEach(src => { const img = document.createElement('img'); img.src = src; img.className = 'carousel-slide w-full h-full object-contain flex-shrink-0 bg-brand-light'; track.appendChild(img); });
+    images.forEach(src => { const img = document.createElement('img'); img.src = src; img.loading = 'lazy'; img.decoding = 'async'; img.className = 'carousel-slide w-full h-full object-contain flex-shrink-0 bg-brand-light'; track.appendChild(img); });
     images.forEach((_, i) => { const d = document.createElement('span'); d.className = 'w-2 h-2 rounded-full ' + (i===0?'bg-white/70':'bg-white/30') + ' cursor-pointer'; d.onclick = () => { idx=i; upd(); reset(); }; dotsC.appendChild(d); });
     function upd() { track.style.transform = 'translateX(-'+(idx*100)+'%)'; dotsC.querySelectorAll('span').forEach((d,i) => { d.className = 'w-2 h-2 rounded-full '+(i===idx?'bg-white/70':'bg-white/30')+' cursor-pointer'; }); }
     function nxt() { idx=(idx+1)%images.length; upd(); }
