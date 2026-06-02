@@ -45,15 +45,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: {
-                fontFamily: { sans: ['DM Sans','sans-serif'], display: ['Outfit','sans-serif'] },
-                colors: { brand: { primary:'#1c3d33', light:'#f7f6f2', accent:'#d96c4a', accentHover:'#bd5b3d', surface:'#ffffff', textDark:'#2c332f', textMuted:'#647069', border:'#e2e6e4' } },
-            } }
-        }
-    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         html { scroll-behavior: smooth; }
         section[id] { scroll-margin-top: 6rem; }
@@ -435,7 +427,7 @@
                         <label class="flex items-center justify-center w-full h-16 border-2 border-dashed border-brand-primary/10 rounded-xl cursor-pointer bg-brand-light/50 hover:border-brand-accent/30 transition-colors gap-3 px-4">
                             <i class="fa-solid fa-cloud-arrow-up text-brand-primary/30"></i>
                             <span class="text-xs text-brand-textMuted"><span class="font-semibold text-brand-primary" data-i18n="contact.uploadClick">Click to upload</span> <span data-i18n="contact.uploadDrag">or drag and drop</span></span>
-                            <span class="text-xs text-gray-400 hidden sm:inline">JPG, PNG, PDF (MAX. 10MB)</span>
+                            <span class="text-xs text-gray-400 hidden sm:inline">Up to 10 files, 25MB each</span>
                             <input id="fileInput2" type="file" name="attachment" accept="image/*,.pdf" class="hidden" multiple />
                         </label>
                         <div id="fileList2" class="mt-2 space-y-1 text-xs text-brand-primary"></div>
