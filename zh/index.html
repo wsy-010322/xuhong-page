@@ -416,7 +416,7 @@
                 <form id="contactForm" action="https://formspree.io/f/mbdbvzle" method="POST" enctype="multipart/form-data" class="space-y-6">
                         <input type="hidden" name="_subject" value="New Inquiry from Xuhong Bags Website">
                         <input type="hidden" name="_replyto" id="formReplyTo">
-                        <input type="hidden" name="_next" value="">
+                        <input type="hidden" name="_next" value="https://xuhongbags.com/thank-you/">
                     <div class="grid md:grid-cols-2 gap-4">
                         <input type="text" id="contactName" name="name" class="w-full bg-transparent border-0 border-b border-gray-200 py-3 text-brand-primary placeholder:text-gray-300 focus:outline-none focus:border-b-brand-accent transition-colors text-sm" placeholder="您的姓名 *" required>
                         <input type="text" id="contactCompany" name="company" class="w-full bg-transparent border-0 border-b border-gray-200 py-3 text-brand-primary placeholder:text-gray-300 focus:outline-none focus:border-b-brand-accent transition-colors text-sm" placeholder="公司 / 品牌名称">
@@ -633,21 +633,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     fetch('https://formspree.io/f/mbdbvzle', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
     .then(function(r) {
         if (r.ok) {
-            // show success modal
-            document.getElementById('successModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            var title, body;
-            switch(currentLang) {
-                case 'zh': title = '发送成功！'; body = '我们会处理您的请求并在24小时内给您回复。'; break;
-                case 'ja': title = '送信完了！'; body = 'ご依頼内容を確認し、24時間以内にご返信いたします。'; break;
-                case 'ko': title = '전송 완료!'; body = '요청을 확인하고 24시간 이내에 답변 드리겠습니다.'; break;
-                default: title = 'Sent Successfully!'; body = 'We have received your request and will respond within 24 hours.';
-            }
-            document.getElementById('successTitle').textContent = title;
-            document.getElementById('successBody').textContent = body;
-            // reset form
-            document.getElementById('contactForm').reset();
-            var fl2 = document.getElementById('fileList2'); if (fl2) fl2.innerHTML = ''; selectedFiles = new DataTransfer(); fi.files = selectedFiles.files;
+            window.location.href = '/thank-you/';
         } else {
             r.json().then(function(data) {
                 console.error('Formspree error:', data);
