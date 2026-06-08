@@ -519,22 +519,40 @@ const imageLightbox = document.createElement('div');
 imageLightbox.id = 'imageLightbox';
 imageLightbox.className = 'modal-overlay fixed inset-0 z-[120] flex items-center justify-center p-4';
 imageLightbox.style.cssText = 'background:rgba(28,61,51,0.82);backdrop-filter:blur(8px);';
-imageLightbox.innerHTML = '<div class="modal-content relative w-full max-w-5xl"><button type="button" aria-label="Close image preview" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/90 hover:bg-brand-accent hover:text-white text-brand-primary shadow-lg flex items-center justify-center transition-colors"><i class="fa-solid fa-xmark"></i></button><img src="" alt="" class="max-h-[82vh] w-full object-contain rounded-2xl bg-white shadow-lg"></div>';
+imageLightbox.innerHTML = '<div class="modal-content relative w-full max-w-5xl"><button type="button" data-lightbox-close aria-label="Close image preview" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/90 hover:bg-brand-accent hover:text-white text-brand-primary shadow-lg flex items-center justify-center transition-colors"><i class="fa-solid fa-xmark"></i></button><button type="button" data-lightbox-prev aria-label="Previous image" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/85 hover:bg-brand-primary hover:text-white text-brand-primary shadow-lg flex items-center justify-center text-xl font-bold transition-colors">&lt;</button><img src="" alt="" class="max-h-[82vh] w-full object-contain rounded-2xl bg-white shadow-lg"><button type="button" data-lightbox-next aria-label="Next image" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/85 hover:bg-brand-primary hover:text-white text-brand-primary shadow-lg flex items-center justify-center text-xl font-bold transition-colors">&gt;</button></div>';
 document.body.appendChild(imageLightbox);
 const lightboxImg = imageLightbox.querySelector('img');
-const closeLightboxBtn = imageLightbox.querySelector('button');
-function openImageLightbox(src, alt) {
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || 'Product image preview';
+const closeLightboxBtn = imageLightbox.querySelector('[data-lightbox-close]');
+const lightboxPrevBtn = imageLightbox.querySelector('[data-lightbox-prev]');
+const lightboxNextBtn = imageLightbox.querySelector('[data-lightbox-next]');
+let lightboxImages = [];
+let lightboxIndex = 0;
+function updateLightboxImage() {
+    if (!lightboxImages.length) return;
+    lightboxImg.src = lightboxImages[lightboxIndex];
+    lightboxImg.alt = 'Product image preview ' + (lightboxIndex + 1) + ' of ' + lightboxImages.length;
+}
+function openImageLightbox(images, index) {
+    lightboxImages = images;
+    lightboxIndex = index;
+    updateLightboxImage();
     imageLightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+function stepLightbox(direction) {
+    if (!lightboxImages.length) return;
+    lightboxIndex = (lightboxIndex + direction + lightboxImages.length) % lightboxImages.length;
+    updateLightboxImage();
 }
 function closeImageLightbox() {
     imageLightbox.classList.remove('active');
     lightboxImg.src = '';
+    lightboxImages = [];
     document.body.style.overflow = '';
 }
 closeLightboxBtn.addEventListener('click', closeImageLightbox);
+lightboxPrevBtn.addEventListener('click', e => { e.stopPropagation(); stepLightbox(-1); });
+lightboxNextBtn.addEventListener('click', e => { e.stopPropagation(); stepLightbox(1); });
 imageLightbox.addEventListener('click', e => { if (e.target === imageLightbox) closeImageLightbox(); });
 
 document.querySelectorAll('.carousel[data-images]').forEach(el => {
@@ -542,13 +560,13 @@ document.querySelectorAll('.carousel[data-images]').forEach(el => {
     const track = el.querySelector('.carousel-track');
     const dotsC = el.querySelector('.absolute.bottom-3');
     let idx = 0, iv;
-    images.forEach(src => {
+    images.forEach((src, i) => {
         const img = document.createElement('img');
         img.src = src;
         img.loading = 'lazy';
         img.decoding = 'async';
         img.className = 'carousel-slide w-full h-full object-contain flex-shrink-0 bg-brand-light cursor-zoom-in';
-        img.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); openImageLightbox(src, img.alt); });
+        img.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); openImageLightbox(images, i); });
         track.appendChild(img);
     });
     images.forEach((_, i) => { const d = document.createElement('span'); d.className = 'w-2 h-2 rounded-full ' + (i===0?'bg-white/70':'bg-white/30') + ' cursor-pointer'; d.onclick = (e) => { e.stopPropagation(); e.preventDefault(); idx=i; upd(); reset(); }; dotsC.appendChild(d); });
