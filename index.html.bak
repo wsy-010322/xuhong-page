@@ -36,7 +36,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+86-159-0679-4198",
-            "email": "siyingwang60@gmail.com",
+            "email": "xuhongbags@gmail.com",
             "contactType": "sales"
         }
     }
@@ -388,9 +388,9 @@
                             <i class="fa-solid fa-phone mt-0.5 text-white/60 text-sm"></i>
                             <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5" data-i18n="contact.phoneLabel">Phone</p><p class="font-medium text-sm">+86 15906794198</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold" data-i18n="contact.copied">Copied!</span></div>
                         </div>
-                        <div class="flex items-start gap-2 cursor-pointer group" onclick="copyToClipboard('siyingwang60@gmail.com', this)">
+                        <div class="flex items-start gap-2 cursor-pointer group" onclick="copyToClipboard('xuhongbags@gmail.com', this)">
                             <i class="fa-solid fa-envelope mt-0.5 text-white/60 text-sm"></i>
-                            <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5" data-i18n="contact.emailLabel">Email</p><p class="font-medium text-sm">siyingwang60@gmail.com</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold" data-i18n="contact.copied">Copied!</span></div>
+                            <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5" data-i18n="contact.emailLabel">Email</p><p class="font-medium text-sm">xuhongbags@gmail.com</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold" data-i18n="contact.copied">Copied!</span></div>
                         </div>
                         <div class="flex items-start gap-2 cursor-pointer group" onclick="openWeChatQR()">
                             <i class="fa-solid fa-comment mt-0.5 text-white/60 text-sm"></i>
@@ -626,7 +626,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         }
     })
     .catch(function() {
-        alert('Network error. Please try again or email us directly: siyingwang60@gmail.com');
+        alert('Network error. Please try again or email us directly: xuhongbags@gmail.com');
     })
     .finally(function() {
         btn.textContent = origText;

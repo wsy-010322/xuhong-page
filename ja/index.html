@@ -49,7 +49,7 @@
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+86-159-0679-4198",
-        "email": "siyingwang60@gmail.com",
+        "email": "xuhongbags@gmail.com",
         "contactType": "sales",
         "areaServed": "Worldwide"
     }
@@ -432,9 +432,9 @@
                             <i class="fa-solid fa-phone mt-0.5 text-white/60 text-sm"></i>
                             <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5">電話</p><p class="font-medium text-sm">+86 15906794198</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold">コピーしました！</span></div>
                         </div>
-                        <div class="flex items-start gap-2 cursor-pointer group" onclick="copyToClipboard('siyingwang60@gmail.com', this)">
+                        <div class="flex items-start gap-2 cursor-pointer group" onclick="copyToClipboard('xuhongbags@gmail.com', this)">
                             <i class="fa-solid fa-envelope mt-0.5 text-white/60 text-sm"></i>
-                            <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5">メール (おすすめ)</p><p class="font-medium text-sm">siyingwang60@gmail.com</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold">コピーしました！</span></div>
+                            <div><p class="text-xs text-white/40 uppercase tracking-widest mb-0.5">メール (おすすめ)</p><p class="font-medium text-sm">xuhongbags@gmail.com</p><span class="copy-hint text-xs text-brand-accent opacity-0 transition-opacity font-bold">コピーしました！</span></div>
                         </div>
                         <div class="flex items-start gap-2 cursor-pointer group" onclick="openWeChatQR()">
                             <i class="fa-solid fa-comment mt-0.5 text-white/60 text-sm"></i>
@@ -742,15 +742,15 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             r.json().then(function(data) {
                 console.error('Formspree error:', data);
                 var errMsg = data.error || 'Unknown error';
-                alert('送信失敗：' + errMsg + '\n\n再試行するか、メールでご連絡ください：siyingwang60@gmail.com');
+                alert('送信失敗：' + errMsg + '\n\n再試行するか、メールでご連絡ください：xuhongbags@gmail.com');
             }).catch(function() {
-                alert('送信失敗 (HTTP ' + r.status + ')、再試行するか、メールでご連絡ください：siyingwang60@gmail.com');
+                alert('送信失敗 (HTTP ' + r.status + ')、再試行するか、メールでご連絡ください：xuhongbags@gmail.com');
             });
         }
     })
     .catch(function(err) {
         console.error('Network error:', err);
-        alert('ネットワークエラー。再試行するか、メールでご連絡ください：siyingwang60@gmail.com');
+        alert('ネットワークエラー。再試行するか、メールでご連絡ください：xuhongbags@gmail.com');
     })
     .finally(function() {
         btn.textContent = origText;
