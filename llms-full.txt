@@ -31,3 +31,22 @@ Xuhong Bags manufactures custom bags for B2B buyers, including brand owners, ret
 ## Sitemap
 The XML sitemap is available at https://xuhongbags.com/sitemap.xml and includes language alternates for homepages and product pages.
 
+## Blog Guides
+- EN blog index: https://xuhongbags.com/en/blog/
+- EN How to Choose Canvas Weight for Custom Tote Bags: https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/
+- EN Cotton vs Polyester Tote Bags: Which Is Better for Your Brand?: https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/
+- EN How to Choose a Custom Bag Manufacturer in China: https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/
+- EN Digital Printing vs Screen Printing for Custom Bags: https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/
+- EN OEM vs ODM Bags: What Is the Difference?: https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/
+- JA blog index: https://xuhongbags.com/ja/blog/
+- JA カスタムトートバッグのキャンバス厚み選び: https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/
+- JA コットンとポリエステルのトートバッグ比較: https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/
+- JA 中国のカスタムバッグメーカー選び: https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/
+- JA カスタムバッグの印刷方法比較: https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/
+- JA OEMとODMバッグの違い: https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/
+- KO blog index: https://xuhongbags.com/ko/blog/
+- KO 맞춤 토트백 캔버스 중량 선택 가이드: https://xuhongbags.com/ko/blog/how-to-choose-canvas-weight-for-tote-bags/
+- KO 면 토트백과 폴리에스터 토트백 비교: https://xuhongbags.com/ko/blog/cotton-vs-polyester-tote-bags/
+- KO 중국 맞춤 가방 제조사 선택 방법: https://xuhongbags.com/ko/blog/how-to-choose-custom-bag-manufacturer-china/
+- KO 맞춤 가방 인쇄 방식 비교: https://xuhongbags.com/ko/blog/digital-printing-vs-screen-printing-bags/
+- KO OEM과 ODM 가방의 차이: https://xuhongbags.com/ko/blog/oem-vs-odm-bags-difference/
