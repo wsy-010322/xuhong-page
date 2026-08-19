@@ -5,16 +5,19 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const siteRoot = join(__dirname, "..");
 const workspaceRoot = join(siteRoot, "..");
-const sourceDir = join(workspaceRoot, "SEO_GEO_build", "6.23hermes_blog");
-const publishDate = "2026-06-23";
 const siteUrl = "https://xuhongbags.com";
 
 const sources = [
-  "01-canvas-weight-guide.md",
-  "02-cotton-vs-polyester.md",
-  "03-choose-bag-manufacturer-china.md",
-  "04-printing-methods-comparison.md",
-  "05-oem-vs-odm-bags.md",
+  { batch: "6.23hermes_blog", file: "01-canvas-weight-guide.md", publishDate: "2026-06-23", locales: ["en", "ja", "ko"] },
+  { batch: "6.23hermes_blog", file: "02-cotton-vs-polyester.md", publishDate: "2026-06-23", locales: ["en", "ja", "ko"] },
+  { batch: "6.23hermes_blog", file: "03-choose-bag-manufacturer-china.md", publishDate: "2026-06-23", locales: ["en", "ja", "ko"] },
+  { batch: "6.23hermes_blog", file: "04-printing-methods-comparison.md", publishDate: "2026-06-23", locales: ["en", "ja", "ko"] },
+  { batch: "6.23hermes_blog", file: "05-oem-vs-odm-bags.md", publishDate: "2026-06-23", locales: ["en", "ja", "ko"] },
+  { batch: "6.24hermes_blog", file: "6.24_Custom-Tote-Bag-MOQ-Guide.md", publishDate: "2026-06-24", locales: ["en"] },
+  { batch: "6.24hermes_blog", file: "6.24_Custom-Drawstring-Bag-Use-Cases.md", publishDate: "2026-06-24", locales: ["en"] },
+  { batch: "6.24hermes_blog", file: "6.24_Custom-Gift-Bag-Ideas-Corporate.md", publishDate: "2026-06-24", locales: ["en"] },
+  { batch: "6.24hermes_blog", file: "6.24_Custom-Cosmetic-Bag-Material-Choices.md", publishDate: "2026-06-24", locales: ["en"] },
+  { batch: "6.24hermes_blog", file: "6.24_What-Information-to-Send-for-Custom-Bag-Quote.md", publishDate: "2026-06-24", locales: ["en"] },
 ];
 
 const categories = {
@@ -23,6 +26,49 @@ const categories = {
   "how-to-choose-custom-bag-manufacturer-china": "Sourcing",
   "digital-printing-vs-screen-printing-bags": "Printing",
   "oem-vs-odm-bags-difference": "OEM/ODM",
+  "custom-tote-bag-moq-guide": "Sourcing",
+  "custom-drawstring-bag-use-cases": "Applications",
+  "custom-gift-bag-ideas-corporate": "Applications",
+  "custom-cosmetic-bag-material-choices": "Materials",
+  "what-information-to-send-for-custom-bag-quote": "Sourcing",
+};
+
+const serviceSlugs = {
+  "how-to-choose-canvas-weight-for-tote-bags": ["custom-canvas-tote-bags", "oem-bag-manufacturer"],
+  "cotton-vs-polyester-tote-bags": ["custom-canvas-tote-bags", "custom-drawstring-bags", "oem-bag-manufacturer"],
+  "how-to-choose-custom-bag-manufacturer-china": ["oem-bag-manufacturer", "custom-canvas-tote-bags"],
+  "digital-printing-vs-screen-printing-bags": ["custom-canvas-tote-bags", "custom-drawstring-bags", "oem-bag-manufacturer"],
+  "oem-vs-odm-bags-difference": ["oem-bag-manufacturer", "custom-canvas-tote-bags"],
+  "custom-tote-bag-moq-guide": ["custom-canvas-tote-bags", "oem-bag-manufacturer"],
+  "custom-drawstring-bag-use-cases": ["custom-drawstring-bags", "oem-bag-manufacturer"],
+  "custom-gift-bag-ideas-corporate": ["custom-gift-bags", "oem-bag-manufacturer"],
+  "custom-cosmetic-bag-material-choices": ["custom-cosmetic-bags", "oem-bag-manufacturer"],
+  "what-information-to-send-for-custom-bag-quote": ["oem-bag-manufacturer", "custom-canvas-tote-bags"],
+};
+
+const relatedSlugs = {
+  "how-to-choose-canvas-weight-for-tote-bags": ["cotton-vs-polyester-tote-bags", "custom-tote-bag-moq-guide", "digital-printing-vs-screen-printing-bags"],
+  "cotton-vs-polyester-tote-bags": ["how-to-choose-canvas-weight-for-tote-bags", "digital-printing-vs-screen-printing-bags", "custom-tote-bag-moq-guide"],
+  "how-to-choose-custom-bag-manufacturer-china": ["oem-vs-odm-bags-difference", "what-information-to-send-for-custom-bag-quote", "custom-tote-bag-moq-guide"],
+  "digital-printing-vs-screen-printing-bags": ["how-to-choose-canvas-weight-for-tote-bags", "cotton-vs-polyester-tote-bags", "custom-cosmetic-bag-material-choices"],
+  "oem-vs-odm-bags-difference": ["how-to-choose-custom-bag-manufacturer-china", "what-information-to-send-for-custom-bag-quote", "custom-tote-bag-moq-guide"],
+  "custom-tote-bag-moq-guide": ["what-information-to-send-for-custom-bag-quote", "how-to-choose-custom-bag-manufacturer-china", "oem-vs-odm-bags-difference"],
+  "custom-drawstring-bag-use-cases": ["custom-gift-bag-ideas-corporate", "what-information-to-send-for-custom-bag-quote", "digital-printing-vs-screen-printing-bags"],
+  "custom-gift-bag-ideas-corporate": ["custom-drawstring-bag-use-cases", "custom-cosmetic-bag-material-choices", "what-information-to-send-for-custom-bag-quote"],
+  "custom-cosmetic-bag-material-choices": ["custom-gift-bag-ideas-corporate", "digital-printing-vs-screen-printing-bags", "what-information-to-send-for-custom-bag-quote"],
+  "what-information-to-send-for-custom-bag-quote": ["how-to-choose-custom-bag-manufacturer-china", "oem-vs-odm-bags-difference", "custom-tote-bag-moq-guide"],
+};
+
+const seoOverrides = {
+  "custom-drawstring-bag-use-cases": {
+    description: "Explore 7 ways brands use custom drawstring bags for events, sports teams, retail packaging, welcome kits, weddings, and promotional giveaways.",
+  },
+  "custom-gift-bag-ideas-corporate": {
+    description: "Explore corporate gift bag ideas for holidays, client appreciation, product launches, retail packaging, trade shows, and branded event programs.",
+  },
+  "custom-cosmetic-bag-material-choices": {
+    description: "Compare cotton, polyester, PVC, nylon, and non-woven materials for custom cosmetic bags, with practical tips for beauty brands and gift sets.",
+  },
 };
 
 const locales = {
@@ -46,6 +92,7 @@ const locales = {
       Sourcing: "Sourcing",
       Printing: "Printing",
       "OEM/ODM": "OEM/ODM",
+      Applications: "Applications",
     },
     location: "Jinhua, Zhejiang, China",
     publishedBy: "Published by Xuhong Bags",
@@ -63,7 +110,16 @@ const locales = {
     sourcingText: "Sourcing guides help you evaluate bag manufacturers in China, understand MOQ and sampling timelines, check factory capability, and avoid common communication or quality-control risks before you place a bulk order.",
     printingText: "Printing guides compare screen printing, digital printing, DTF transfer, sublimation, heat transfer, and embroidery, so you can choose a logo method that fits your artwork, quantity, material, and budget.",
     oemText: "OEM/ODM guides clarify production models, private label options, and customization levels. Use them to decide whether you need a factory template with your logo, a modified standard bag, or a fully custom product developed from your tech pack.",
+    applicationsText: "Application guides show how brands use custom bags for events, retail packaging, corporate gifts, product launches, sports programs, and other real purchasing scenarios.",
     startGuides: "Start With These Guides",
+    latestGuides: "Latest B2B Guides",
+    serviceLabels: {
+      "custom-canvas-tote-bags": "Custom Canvas Tote Bags",
+      "custom-drawstring-bags": "Custom Drawstring Bags",
+      "custom-gift-bags": "Custom Gift Bags",
+      "custom-cosmetic-bags": "Custom Cosmetic Bags",
+      "oem-bag-manufacturer": "OEM Bag Manufacturer",
+    },
     services: [
       ["Custom Canvas Tote Bags", "custom-canvas-tote-bags"],
       ["Custom Drawstring Bags", "custom-drawstring-bags"],
@@ -90,6 +146,7 @@ const locales = {
       Sourcing: "調達",
       Printing: "印刷",
       "OEM/ODM": "OEM/ODM",
+      Applications: "活用事例",
     },
     location: "中国 浙江省 金華市",
     publishedBy: "Xuhong Bags 公開",
@@ -107,7 +164,16 @@ const locales = {
     sourcingText: "調達ガイドでは、中国のバッグメーカー評価、MOQ、サンプル期間、工場能力、量産前に避けたい品質・コミュニケーションリスクを整理します。",
     printingText: "印刷ガイドでは、スクリーン印刷、デジタル印刷、DTF、昇華転写、熱転写、刺繍を比較し、デザイン、数量、素材、予算に合う方法を選べるようにします。",
     oemText: "OEM/ODMガイドでは、生産モデル、プライベートラベル、カスタム範囲を整理し、既存テンプレート、部分変更、完全オリジナルのどれが適切か判断できます。",
+    applicationsText: "活用事例ガイドでは、イベント、店舗包装、法人ギフト、商品発表、スポーツなど、実際の発注場面に合わせたバッグ選びを紹介します。",
     startGuides: "まず読むガイド",
+    latestGuides: "最新B2Bガイド",
+    serviceLabels: {
+      "custom-canvas-tote-bags": "カスタムキャンバストートバッグ",
+      "custom-drawstring-bags": "カスタム巾着バッグ",
+      "custom-gift-bags": "カスタムギフトバッグ",
+      "custom-cosmetic-bags": "カスタム化粧ポーチ",
+      "oem-bag-manufacturer": "OEMバッグメーカー",
+    },
     services: [
       ["カスタムキャンバストートバッグ", "custom-canvas-tote-bags"],
       ["カスタム巾着バッグ", "custom-drawstring-bags"],
@@ -134,6 +200,7 @@ const locales = {
       Sourcing: "소싱",
       Printing: "인쇄",
       "OEM/ODM": "OEM/ODM",
+      Applications: "활용 사례",
     },
     location: "중국 저장성 진화",
     publishedBy: "Xuhong Bags 발행",
@@ -151,7 +218,16 @@ const locales = {
     sourcingText: "소싱 가이드는 중국 가방 제조사 평가, MOQ, 샘플 일정, 공장 역량, 대량 생산 전 확인해야 할 품질 및 커뮤니케이션 리스크를 다룹니다.",
     printingText: "인쇄 가이드는 스크린 인쇄, 디지털 인쇄, DTF, 승화 전사, 열전사, 자수를 비교해 디자인, 수량, 소재, 예산에 맞는 방법을 선택하도록 돕습니다.",
     oemText: "OEM/ODM 가이드는 생산 모델, 프라이빗 라벨, 커스터마이징 범위를 정리해 기존 템플릿, 일부 수정, 완전 맞춤 제작 중 무엇이 적합한지 판단하도록 돕습니다.",
+    applicationsText: "활용 사례 가이드는 이벤트, 리테일 포장, 기업 선물, 제품 출시, 스포츠 등 실제 구매 상황에 맞는 맞춤 가방 아이디어를 소개합니다.",
     startGuides: "먼저 볼 가이드",
+    latestGuides: "최신 B2B 가이드",
+    serviceLabels: {
+      "custom-canvas-tote-bags": "맞춤 캔버스 토트백",
+      "custom-drawstring-bags": "맞춤 스트링 백",
+      "custom-gift-bags": "맞춤 기프트 백",
+      "custom-cosmetic-bags": "맞춤 코스메틱 백",
+      "oem-bag-manufacturer": "OEM 가방 제조사",
+    },
     services: [
       ["맞춤 캔버스 토트백", "custom-canvas-tote-bags"],
       ["맞춤 스트링 백", "custom-drawstring-bags"],
@@ -1601,9 +1677,20 @@ for (const [locale, bodies] of Object.entries(structuredLocalizedBodies)) {
   }
 }
 
-function extractCodeValue(block, label) {
-  const match = block.match(new RegExp(`${label}:\\n([\\s\\S]*?)(?=\\n\\n[A-Z][A-Za-z ]+:|\\n\\nMain product pages|\\n\\nRelated blog posts|\\n\\nFAQ questions|$)`));
-  return match ? match[1].trim() : "";
+function extractSeoValue(block, label) {
+  const lines = block.split(/\r?\n/);
+  const index = lines.findIndex((line) => line.trim().startsWith(`${label}:`));
+  if (index < 0) return "";
+
+  const inlineValue = lines[index].trim().slice(label.length + 1).trim();
+  if (inlineValue) return inlineValue;
+
+  for (let i = index + 1; i < lines.length; i += 1) {
+    const value = lines[i].trim();
+    if (!value || value === "```") continue;
+    return value;
+  }
+  return "";
 }
 
 function normalizeHref(html) {
@@ -1670,6 +1757,18 @@ function renderMarkdown(markdown) {
       continue;
     }
 
+    if (line.startsWith("```")) {
+      const codeLines = [];
+      i += 1;
+      while (i < lines.length && !lines[i].trim().startsWith("```")) {
+        codeLines.push(lines[i]);
+        i += 1;
+      }
+      i += 1;
+      html.push(`<pre><code>${escapeHtml(codeLines.join("\n"))}</code></pre>`);
+      continue;
+    }
+
     if (isTableStart(lines, i)) {
       const tableLines = [];
       tableLines.push(lines[i].trim());
@@ -1731,34 +1830,38 @@ function renderMarkdown(markdown) {
   return normalizeHref(html.join("\n"));
 }
 
-function extractArticle(sourceFile) {
-  const markdown = readFileSync(join(sourceDir, sourceFile), "utf8");
-  const brief = markdown.match(/## 1\. SEO Brief[\s\S]*?```([\s\S]*?)```/)?.[1] || "";
-  const title = extractCodeValue(brief, "SEO title");
-  const description = extractCodeValue(brief, "Meta description");
-  const h1 = extractCodeValue(brief, "H1");
-  const url = extractCodeValue(brief, "Recommended URL");
+function extractArticle(source) {
+  const sourcePath = join(workspaceRoot, "SEO_GEO_build", source.batch, source.file);
+  const markdown = readFileSync(sourcePath, "utf8");
+  const brief = markdown.match(/## 1\. SEO Brief([\s\S]*?)(?=\n---\n|\n## 2\.)/)?.[1] || "";
+  let title = extractSeoValue(brief, "SEO title");
+  let description = extractSeoValue(brief, "Meta description");
+  const h1 = extractSeoValue(brief, "H1");
+  const url = extractSeoValue(brief, "Recommended URL");
   const slug = url.replace(/^\/en\/blog\//, "").replace(/\/$/, "");
-  const articleStart = markdown.indexOf("## 2. Final Article (English)");
+  title = seoOverrides[slug]?.title || title;
+  description = seoOverrides[slug]?.description || description;
+  const articleStart = markdown.search(/^## 2\. Final Article(?: \(English\))?\s*$/m);
   const htmlStart = markdown.indexOf("## 3. HTML-Ready Version");
   const articleBlock = articleStart >= 0 && htmlStart > articleStart
     ? markdown.slice(articleStart, htmlStart)
     : "";
   const finalArticle = articleBlock
-    .replace(/^## 2\. Final Article \(English\)\s*/, "")
-    .replace(/\n---\n\n\*\*[\s\S]*$/, "")
-    .replace(/\n---\n\s*$/, "")
+    .replace(/^## 2\. Final Article(?: \(English\))?\s*/, "")
+    .replace(/\n---\n[\s\S]*\n---\s*$/, "")
     .trim();
 
   if (!title || !description || !h1 || !slug || !finalArticle) {
-    throw new Error(`Could not parse blog source: ${sourceFile}`);
+    throw new Error(`Could not parse blog source: ${source.file}`);
   }
 
   const summary = markdown.match(/<p class="post-summary">([\s\S]*?)<\/p>/)?.[1]?.trim()
     || description.replace(/\s+/g, " ");
 
   return {
-    sourceFile,
+    sourceFile: source.file,
+    publishDate: source.publishDate,
+    supportedLocales: source.locales,
     slug,
     url: `/en/blog/${slug}/`,
     canonical: `${siteUrl}/en/blog/${slug}/`,
@@ -1772,7 +1875,7 @@ function extractArticle(sourceFile) {
 }
 
 function withLocaleArticles(articles, locale) {
-  return articles.map((article) => ({
+  return articles.filter((article) => article.supportedLocales.includes(locale)).map((article) => ({
     ...article,
     ...(localizedArticles[locale]?.[article.slug] || {}),
     url: `/${locale}/blog/${article.slug}/`,
@@ -1783,15 +1886,23 @@ function withLocaleArticles(articles, locale) {
   }));
 }
 
-function renderLanguageSelect(locale, pathSuffix, id) {
-  const switchPath = (lang) => (lang === "zh" ? "/zh/" : `/${lang}${pathSuffix}`);
+function renderLanguageSelect(locale, pathSuffix, id, availableLocales = Object.keys(locales)) {
+  const switchPath = (lang) => {
+    if (lang === "zh") return "/zh/";
+    return availableLocales.includes(lang) ? `/${lang}${pathSuffix}` : `/${lang}/blog/`;
+  };
   const labels = { en: "EN", zh: "中文", ja: "日本語", ko: "한국어" };
   const options = ["en", "zh", "ja", "ko"].map((lang) => `<option value="${switchPath(lang)}"${lang === locale ? " selected" : ""}>${labels[lang]}</option>`).join("");
   return `<select onchange="(function(v){if(!v)return;if(location.protocol==='file:'){v=v.replace(/^\\//,'');if(/\\/(en|zh|ja|ko)\\/index\\.html$/.test(location.pathname)){v='../'+v;}v=v+'index.html';}location.href=v;})(this.value)" id="${id}" class="text-xs font-medium bg-transparent border border-brand-border rounded-full px-3 py-1.5 text-brand-primary cursor-pointer focus:outline-none focus:border-brand-accent appearance-none pr-7" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22><path d=%22M0 0l5 6 5-6%22 fill=%22%231c3d33%22/></svg>');background-repeat:no-repeat;background-position:right 8px center;">${options}</select>`;
 }
 
-function pageShell({ title, description, canonical, content, type = "article", locale = "en", pathSuffix = "/blog/" }) {
+function pageShell({ title, description, canonical, content, type = "article", locale = "en", pathSuffix = "/blog/", availableLocales = Object.keys(locales), structuredData = [] }) {
   const l = locales[locale];
+  const alternateLinks = availableLocales.map((lang) => `  <link rel="alternate" hreflang="${lang}" href="${siteUrl}/${lang}${pathSuffix}">`).join("\n");
+  const xDefault = `  <link rel="alternate" hreflang="x-default" href="${siteUrl}/en${pathSuffix}">`;
+  const localeCodes = { en: "en_US", ja: "ja_JP", ko: "ko_KR" };
+  const ogAlternates = availableLocales.filter((lang) => lang !== locale).map((lang) => `  <meta property="og:locale:alternate" content="${localeCodes[lang]}">`).join("\n");
+  const jsonLd = structuredData.map((data) => `  <script type="application/ld+json">${JSON.stringify(data)}</script>`).join("\n");
   return `<!DOCTYPE html>
 <html lang="${l.htmlLang}" class="scroll-smooth">
 <head>
@@ -1802,14 +1913,19 @@ function pageShell({ title, description, canonical, content, type = "article", l
   <meta name="author" content="Xuhong Bags">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${canonical}">
+${alternateLinks}
+${xDefault}
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="${type}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:site_name" content="Xuhong Bags">
+  <meta property="og:locale" content="${localeCodes[locale]}">
+${ogAlternates}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
+${jsonLd}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
@@ -1829,6 +1945,7 @@ function pageShell({ title, description, canonical, content, type = "article", l
     .blog-prose ul { list-style: disc; }
     .blog-prose ol { list-style: decimal; }
     .blog-prose a { color: #1c3d33; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .blog-prose pre { overflow-x: auto; margin: 1.5rem 0; padding: 1.25rem; border: 1px solid #e2e6e4; border-radius: 1rem; background: #1c3d33; color: #fff; font-size: .88rem; line-height: 1.65; white-space: pre-wrap; }
     .blog-table-wrap { overflow-x: auto; margin: 1.5rem 0; border: 1px solid #e2e6e4; border-radius: 1rem; background: #fff; }
     .blog-prose table { width: 100%; border-collapse: collapse; min-width: 680px; }
     .blog-prose th, .blog-prose td { padding: .9rem 1rem; border-bottom: 1px solid #e2e6e4; text-align: left; vertical-align: top; }
@@ -1840,6 +1957,11 @@ function pageShell({ title, description, canonical, content, type = "article", l
     .blog-related { background: #eef0ed; border-radius: 1rem; }
     .blog-related + .blog-related { margin-top: 1.25rem; }
     .blog-related h2 { margin-top: 0; font-size: 1.4rem; }
+    .blog-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .blog-card { display: flex; flex-direction: column; padding: 1.5rem; border: 1px solid #e2e6e4; border-radius: 1rem; background: #fff; }
+    .blog-card h2 { margin: .35rem 0 .75rem; font-size: 1.3rem; }
+    .blog-card p { margin: 0; font-size: .95rem; }
+    .blog-card-meta { display: flex; justify-content: space-between; gap: 1rem; color: #647069; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
     .blog-sidebar { border-right: 1px solid #e2e6e4; padding-right: 1.75rem; }
     .blog-sidebar-heading { font: 700 1.25rem/1.2 Outfit, sans-serif; color: #1c3d33; }
     .blog-sidebar-control { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: .85rem 0 .55rem; font: 700 1rem/1.2 Outfit, sans-serif; color: #1c3d33; text-align: left; }
@@ -1853,6 +1975,7 @@ function pageShell({ title, description, canonical, content, type = "article", l
     .blog-sidebar a:hover { color: #1c3d33; }
     .blog-sidebar a.active { color: #d96c4a; font-weight: 700; }
     @media (max-width: 1023px) { .blog-sidebar { border-right: 0; border-bottom: 1px solid #e2e6e4; padding-right: 0; padding-bottom: 1.5rem; } }
+    @media (max-width: 640px) { .blog-card-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="bg-brand-light text-brand-textDark font-sans antialiased">
@@ -1866,11 +1989,11 @@ function pageShell({ title, description, canonical, content, type = "article", l
         <a href="/${locale}/#about" class="text-sm font-medium text-brand-primary/70 hover:text-brand-accent transition-colors">${l.nav.about}</a>
         <a href="/${locale}/blog/" class="text-sm font-medium text-brand-accent transition-colors">${l.nav.blog}</a>
         <a href="/${locale}/#contact" class="text-sm font-medium text-brand-primary/70 hover:text-brand-accent transition-colors">${l.contact}</a>
-        ${renderLanguageSelect(locale, pathSuffix, "lang-select")}
+        ${renderLanguageSelect(locale, pathSuffix, "lang-select", availableLocales)}
         <a href="/${locale}/#contact" class="bg-brand-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-accent transition-colors">${l.nav.quote}</a>
       </div>
       <div class="flex md:hidden items-center gap-3">
-        ${renderLanguageSelect(locale, pathSuffix, "lang-select-mob")}
+        ${renderLanguageSelect(locale, pathSuffix, "lang-select-mob", availableLocales)}
         <a href="/${locale}/#contact" class="bg-brand-primary text-white px-3 py-1.5 rounded-full text-xs font-medium" aria-label="${l.nav.quote}"><i class="fa-solid fa-paper-plane"></i></a>
       </div>
     </div>
@@ -1905,15 +2028,45 @@ function pageShell({ title, description, canonical, content, type = "article", l
 
 function renderArticlePage(article, allArticles, locale = "en") {
   const l = locales[locale];
-  const related = allArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
+  const requestedRelated = relatedSlugs[article.slug] || [];
+  const related = requestedRelated.map((slug) => allArticles.find((item) => item.slug === slug)).filter(Boolean).slice(0, 3);
+  if (!related.length) related.push(...allArticles.filter((item) => item.slug !== article.slug).slice(0, 3));
   const relatedHtml = related.map((item) => `<li><a href="${item.url}">${escapeHtml(item.h1)}</a></li>`).join("");
+  const articleServices = (serviceSlugs[article.slug] || ["oem-bag-manufacturer", "custom-canvas-tote-bags"])
+    .map((slug) => `<li><a href="/${locale}/${slug}/">${escapeHtml(l.serviceLabels[slug])}</a></li>`)
+    .join("");
   const sidebarHtml = renderBlogSidebar(allArticles, article.slug, true, locale);
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: article.h1,
+      description: article.description,
+      datePublished: article.publishDate,
+      dateModified: article.publishDate,
+      inLanguage: l.htmlLang,
+      mainEntityOfPage: { "@type": "WebPage", "@id": article.canonical },
+      author: { "@type": "Organization", name: "Xuhong Bags", url: siteUrl },
+      publisher: { "@type": "Organization", name: "Xuhong Bags", url: siteUrl },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: l.home, item: `${siteUrl}/${locale}/` },
+        { "@type": "ListItem", position: 2, name: l.nav.blog, item: `${siteUrl}/${locale}/blog/` },
+        { "@type": "ListItem", position: 3, name: article.h1, item: article.canonical },
+      ],
+    },
+  ];
   return pageShell({
     title: article.title,
     description: article.description,
     canonical: article.canonical,
     locale,
     pathSuffix: `/blog/${article.slug}/`,
+    availableLocales: article.supportedLocales,
+    structuredData,
     content: `<main class="pt-28 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-10 items-start">
     ${sidebarHtml}
@@ -1922,14 +2075,14 @@ function renderArticlePage(article, allArticles, locale = "en") {
       <header class="mb-10">
         <p class="text-sm font-bold text-brand-accent uppercase tracking-widest mb-4">${escapeHtml(l.categoryLabels[article.category] || article.category)}</p>
         <h1>${escapeHtml(article.h1)}</h1>
-        <p class="text-sm text-brand-textMuted">${l.publishedBy} | ${publishDate}</p>
+        <p class="text-sm text-brand-textMuted">${l.publishedBy} | <time datetime="${article.publishDate}">${article.publishDate}</time></p>
         <p class="text-lg text-brand-textMuted mt-5">${escapeHtml(article.summary)}</p>
       </header>
       ${article.body}
       <section class="blog-related mt-12 p-6 md:p-8">
         <h2 class="mt-0">${l.relatedServices}</h2>
         <ul>
-          ${l.services.map(([label, slug]) => `<li><a href="/${locale}/${slug}/">${label}</a></li>`).join("")}
+          ${articleServices}
         </ul>
       </section>
       <section class="blog-related p-6 md:p-8">
@@ -1949,7 +2102,7 @@ function renderArticlePage(article, allArticles, locale = "en") {
 
 function renderBlogSidebar(articles, activeSlug = "", expandAll = true, locale = "en") {
   const l = locales[locale];
-  const groupLabels = ["Materials", "Sourcing", "Printing", "OEM/ODM"];
+  const groupLabels = ["Materials", "Applications", "Sourcing", "Printing", "OEM/ODM"];
   const grouped = groupLabels.map((label) => ({
     label,
     articles: articles.filter((article) => article.category === label),
@@ -1975,6 +2128,33 @@ function renderBlogSidebar(articles, activeSlug = "", expandAll = true, locale =
 
 function renderIndexPage(articles, locale = "en") {
   const l = locales[locale];
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: l.indexTitle,
+      description: l.indexDescription,
+      url: `${siteUrl}/${locale}/blog/`,
+      inLanguage: l.htmlLang,
+      publisher: { "@type": "Organization", name: "Xuhong Bags", url: siteUrl },
+      blogPost: articles.map((article) => ({
+        "@type": "BlogPosting",
+        headline: article.h1,
+        url: article.canonical,
+        datePublished: article.publishDate,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: articles.map((article, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: article.h1,
+        url: article.canonical,
+      })),
+    },
+  ];
   return pageShell({
     title: `${l.indexTitle} | ${l.titleSuffix}`,
     description: l.indexDescription,
@@ -1982,6 +2162,8 @@ function renderIndexPage(articles, locale = "en") {
     type: "website",
     locale,
     pathSuffix: "/blog/",
+    availableLocales: Object.keys(locales),
+    structuredData,
     content: `<main class="pt-28 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[18rem_minmax(0,1fr)] gap-10 items-start">
       ${renderBlogSidebar(articles, "", true, locale)}
@@ -2001,6 +2183,18 @@ function renderIndexPage(articles, locale = "en") {
         <p>${l.printingText}</p>
         <h2>${l.categoryLabels["OEM/ODM"]}</h2>
         <p>${l.oemText}</p>
+        <h2>${l.categoryLabels.Applications}</h2>
+        <p>${l.applicationsText}</p>
+        <section class="mt-12" aria-labelledby="latest-guides-heading">
+          <h2 id="latest-guides-heading">${l.latestGuides}</h2>
+          <div class="blog-card-grid">
+            ${articles.map((article) => `<article class="blog-card">
+              <div class="blog-card-meta"><span>${escapeHtml(l.categoryLabels[article.category] || article.category)}</span><time datetime="${article.publishDate}">${article.publishDate}</time></div>
+              <h2><a href="${article.url}">${escapeHtml(article.h1)}</a></h2>
+              <p>${escapeHtml(article.summary)}</p>
+            </article>`).join("")}
+          </div>
+        </section>
         <section class="blog-related mt-10 p-6 md:p-8">
           <h2 class="mt-0">${l.startGuides}</h2>
           <ul>
@@ -2017,14 +2211,26 @@ function updateSitemap(allLocaleArticles) {
   const sitemapPath = join(siteRoot, "sitemap.xml");
   let sitemap = readFileSync(sitemapPath, "utf8");
   sitemap = sitemap.replace(/\n  <url>\n    <loc>https:\/\/xuhongbags\.com\/(?:en|ja|ko)\/blog\/[\s\S]*?<\/url>/g, "");
-  const entries = Object.entries(allLocaleArticles).flatMap(([locale, articles]) => [
-    { loc: `${siteUrl}/${locale}/blog/`, priority: "0.7" },
-    ...articles.map((article) => ({ loc: article.canonical, priority: "0.6" })),
-  ]).map(({ loc, priority }) => `  <url>
+  const renderAlternates = (pathSuffix, availableLocales) => `${availableLocales.map((lang) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${siteUrl}/${lang}${pathSuffix}"/>`).join("\n")}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}/en${pathSuffix}"/>`;
+  const indexEntries = Object.entries(allLocaleArticles).map(([locale, articles]) => ({
+    loc: `${siteUrl}/${locale}/blog/`,
+    lastmod: articles.reduce((latest, article) => article.publishDate > latest ? article.publishDate : latest, "2026-06-23"),
+    priority: "0.7",
+    alternates: renderAlternates("/blog/", Object.keys(allLocaleArticles)),
+  }));
+  const articleEntries = Object.entries(allLocaleArticles).flatMap(([, articles]) => articles.map((article) => ({
+    loc: article.canonical,
+    lastmod: article.publishDate,
+    priority: "0.6",
+    alternates: renderAlternates(`/blog/${article.slug}/`, article.supportedLocales),
+  })));
+  const entries = [...indexEntries, ...articleEntries].map(({ loc, lastmod, priority, alternates }) => `  <url>
     <loc>${loc}</loc>
-    <lastmod>${publishDate}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${priority}</priority>
+${alternates}
   </url>`).join("\n");
   sitemap = sitemap.replace("\n</urlset>", `\n${entries}\n</urlset>`);
   writeFileSync(sitemapPath, sitemap);
@@ -2045,7 +2251,7 @@ ${articles.map((article) => `- ${locale.toUpperCase()} ${article.h1}: ${article.
   }
 }
 
-const baseArticles = sources.map(extractArticle);
+const baseArticles = sources.map(extractArticle).sort((a, b) => b.publishDate.localeCompare(a.publishDate));
 const allLocaleArticles = Object.fromEntries(
   Object.keys(locales).map((locale) => [locale, withLocaleArticles(baseArticles, locale)])
 );

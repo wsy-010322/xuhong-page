@@ -267,110 +267,222 @@
   </url>
   <url>
     <loc>https://xuhongbags.com/en/blog/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ja/blog/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/custom-tote-bag-moq-guide/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/custom-tote-bag-moq-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/custom-tote-bag-moq-guide/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/custom-drawstring-bag-use-cases/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/custom-drawstring-bag-use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/custom-drawstring-bag-use-cases/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/custom-gift-bag-ideas-corporate/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/custom-gift-bag-ideas-corporate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/custom-gift-bag-ideas-corporate/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/custom-cosmetic-bag-material-choices/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/custom-cosmetic-bag-material-choices/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/custom-cosmetic-bag-material-choices/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/what-information-to-send-for-custom-bag-quote/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/what-information-to-send-for-custom-bag-quote/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/what-information-to-send-for-custom-bag-quote/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
+  </url>
+  <url>
+    <loc>https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/how-to-choose-canvas-weight-for-tote-bags/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-canvas-weight-for-tote-bags/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/cotton-vs-polyester-tote-bags/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/cotton-vs-polyester-tote-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/cotton-vs-polyester-tote-bags/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/how-to-choose-custom-bag-manufacturer-china/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/how-to-choose-custom-bag-manufacturer-china/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/how-to-choose-custom-bag-manufacturer-china/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/digital-printing-vs-screen-printing-bags/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/digital-printing-vs-screen-printing-bags/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/digital-printing-vs-screen-printing-bags/"/>
   </url>
   <url>
     <loc>https://xuhongbags.com/ko/blog/oem-vs-odm-bags-difference/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xuhongbags.com/ja/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://xuhongbags.com/ko/blog/oem-vs-odm-bags-difference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xuhongbags.com/en/blog/oem-vs-odm-bags-difference/"/>
   </url>
 </urlset>
