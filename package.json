@@ -1,8 +1,11 @@
 {
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify && node ./scripts/build-dist.mjs"
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --minify && node ./scripts/build-dist.mjs",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "wrangler": "^4.104.0"
   }
 }
